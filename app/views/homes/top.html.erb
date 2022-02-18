@@ -1,0 +1,12 @@
+<h1>gem-practice</h1>
+<!--devise（認証機能）-->
+<div class = "gem-box">
+  <h3>devise（認証機能）</h3>
+  <% if user_signed_in? %>
+    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+  <% else %>
+    <p><%= link_to "新規登録", new_user_registration_path %></p>
+    <p><%= link_to "ログイン", new_user_session_path %></p>
+  <% end %>
+</div>
+
