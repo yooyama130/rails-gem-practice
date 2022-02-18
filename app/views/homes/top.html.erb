@@ -8,5 +8,20 @@
     <p><%= link_to "新規登録", new_user_registration_path %></p>
     <p><%= link_to "ログイン", new_user_session_path %></p>
   <% end %>
+  <h4>参考：</h4>
+  <a href = "https://qiita.com/yuki82511988/items/73659af9d1049bd1b256">deviseの導入方法</a>
+</div>
+<!--cancancan（管理者権限）-->
+<div class = "gem-box">
+  <h3>cancancan（管理者権限）</h3>
+  <!--ログインしてるユーザーが管理者の場合のみ-->
+  <% if current_user.try(:admin?) %>
+    <%= link_to '管理者ページへ', rails_admin_path %>
+  <% else %>
+    ログインしていないか、管理者ではありません。
+  <% end %>
+  <h4>参考：</h4>
+  <a href = "https://qiita.com/nakachan1994/items/d5357d10dd6fd132fa92">導入方法</a><br>
+  <a href = "https://qiita.com/yuki82511988/items/73659af9d1049bd1b256">seedファイルを使って管理者を設定する方法</a>
 </div>
 

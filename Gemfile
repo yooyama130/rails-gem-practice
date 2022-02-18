@@ -62,3 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # 認証機能
 gem 'devise'
+# 管理者権限
+gem 'cancancan'
+gem 'rails_admin'
