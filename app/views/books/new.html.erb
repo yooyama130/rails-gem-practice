@@ -1,0 +1,16 @@
+<h1>本の投稿</h1>
+<%= form_with model: @book, local: true do |f| %>
+  <div class = "form">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class = "form">
+    <%= f.label :introduction %>
+    <%= f.text_area :introduction %>
+  </div>
+  <div class = "form">
+    <%= f.label :tag_list %>
+    <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -65,3 +65,5 @@ gem 'devise'
 # 管理者権限
 gem 'cancancan'
 gem 'rails_admin'
+# タグ付け
+gem 'acts-as-taggable-on', '~> 6.0'
