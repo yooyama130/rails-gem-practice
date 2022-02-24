@@ -13,8 +13,18 @@
       <td><%= book.user_id %></td>
       <td><%= book.title %></td>
       <td><%= book.introduction %></td>
-      <td><%= book.tag_list %></td>
+      <td>
+        <% book.tags.each do |tag| %>
+          <%= link_to "#{tag.name}", books_path(tag: tag.name) %>
+        <% end %>
+      </td>
       <td><%= link_to "削除する", book_path(book.id), method: :delete %></td>
     </tr>
   <% end %>
 </table>
+
+<h3 style = "margin-bottom: 2px;">タグで検索</h3>
+<p><%= link_to "すべての本を表示", books_path %></p>
+<% @tags.each do |tag| %>
+  <%= link_to "#{tag.name}(#{tag.taggings_count})", books_path(tag: tag.name), class: "tag" %>
+<% end %>

@@ -28,7 +28,7 @@
 <div class = "gem-box">
   <h3>acts-as-taggable-on（タグ付け）</h3>
   <%= link_to "本の一覧", books_path %>
-  <%= link_to "本を投稿する", new_book_path %>
+  <%= link_to "本を投稿する", new_book_path if user_signed_in? %>
   <h4>参考：</h4>
   <a href = "https://qiita.com/manbolila/items/3f178b7698d877a29b12">導入方法</a><br>
 </div>
