@@ -67,3 +67,9 @@ gem 'cancancan'
 gem 'rails_admin'
 # タグ付け
 gem 'acts-as-taggable-on', '~> 6.0'
+# フォーム用の簡易デザイン
+gem 'bootstrap_form'
+# bootstrap_formに必要なので、bootstrapも導入
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.13'

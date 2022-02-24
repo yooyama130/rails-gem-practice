@@ -14,3 +14,15 @@
   </div>
   <%= f.submit %>
 <% end %>
+
+<br>
+<br>
+
+<!--bootstrap_formを導入したバージョンのフォーム（内容は上と同じ）-->
+<!--エラーメッセージも自動でフォームの下に表示される-->
+<%= bootstrap_form_with(model: @book, layout: :horizontal, local: true) do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :introduction %>
+    <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
+  <%= f.submit %>
+<% end %>
