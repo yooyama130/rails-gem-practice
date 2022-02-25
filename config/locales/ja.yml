@@ -1,0 +1,8 @@
+ja:
+  hello: "Hello world"
+  activerecord:
+    attributes:
+      book:
+        title: 'タイトル'
+        introduction: '紹介文'
+        tag: 'タグ'

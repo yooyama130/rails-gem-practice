@@ -20,9 +20,11 @@
 
 <!--bootstrap_formを導入したバージョンのフォーム（内容は上と同じ）-->
 <!--エラーメッセージも自動でフォームの下に表示される-->
-<%= bootstrap_form_with(model: @book, layout: :horizontal, local: true) do |f| %>
-    <%= f.text_field :title %>
-    <%= f.text_area :introduction %>
-    <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
+<%= bootstrap_form_with(model: @book, inline_errors: false, local: true) do |f| %>
+  <%= f.text_field :title, class: "w-50 border border-dark" %>
+  <%= f.errors_on :title, hide_attribute_name: false, custom_class: "text-danger" %>
+  <%= f.text_area :introduction, class: "w-50 border border-dark" %>
+  <%= f.errors_on :introduction, hide_attribute_name: false, custom_class: "text-danger" %>
+  <%= f.text_field :tag_list, value: @book.tag_list.join(','), class: "w-50 border border-dark" %>
   <%= f.submit %>
 <% end %>
