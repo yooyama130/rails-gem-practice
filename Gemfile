@@ -75,3 +75,5 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 # 日本語化
 gem 'rails-i18n'
+# 検索機能
+gem 'ransack'

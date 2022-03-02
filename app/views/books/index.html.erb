@@ -1,4 +1,13 @@
 <h1>本の一覧</h1>
+<!--検索機能-->
+<div class = "my-3">
+  <%= search_form_for @q do |f| %>
+    <%= f.label :title, "Keyword" %><br>
+    <%= f.search_field :title_cont %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<!--一覧表-->
 <table>
   <tr>
     <th>ID</th>

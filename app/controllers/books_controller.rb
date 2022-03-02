@@ -1,12 +1,19 @@
 class BooksController < ApplicationController
   def index
     @tags = Book.tag_counts_on(:tags).most_used(20)
+    # 検索機能用
+    @q = Book.ransack(params[:q])
     # タグの一覧表示
     if params[:tag]
       @books = Book.tagged_with(params[:tag])
       # タグ検索時にそのタグ付けしているものを表示
     else
-      @books = Book.all
+      if @q.present?
+        # 検索機能が機能していれば、更新する
+        @books = @q.result(distinct: true)
+      else
+        @books = Book.all
+      end
     end
   end
 
