@@ -15,6 +15,7 @@
     <th>タイトル</th>
     <th>紹介文</th>
     <th>タグ</th>
+    <th>評価</th>
   </tr>
   <% @books.each do |book| %>
     <tr>
@@ -27,6 +28,7 @@
           <%= link_to "#{tag.name}", books_path(tag: tag.name) %>
         <% end %>
       </td>
+      <td class="book-evaluation" data-score="<%= book.evaluation %>"></td>
       <td><%= link_to "削除する", book_path(book.id), method: :delete %></td>
     </tr>
   <% end %>
@@ -37,3 +39,14 @@
 <% @tags.each do |tag| %>
   <%= link_to "#{tag.name}(#{tag.taggings_count})", books_path(tag: tag.name), class: "tag" %>
 <% end %>
+
+
+<script>
+  $('.book-evaluation').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

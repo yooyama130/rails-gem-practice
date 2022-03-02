@@ -49,7 +49,7 @@ class BooksController < ApplicationController
 
   def book_params
       #  tag_list: []　を追記 （acts-as-taggable-onのため）
-      params.require(:book).permit(:title, :introduction, :tag_list)
+      params.require(:book).permit(:title, :introduction, :tag_list, :evaluation)
   end
 
 end

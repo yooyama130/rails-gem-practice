@@ -12,6 +12,11 @@
     <%= f.label :tag_list %>
     <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
   </div>
+  <div class = "form">
+    <div class="evaluate_stars">
+      <label>評価</label>
+    </div>
+  </div>
   <%= f.submit %>
 <% end %>
 
@@ -26,5 +31,17 @@
   <%= f.text_area :introduction, class: "w-50 border border-dark" %>
   <%= f.errors_on :introduction, hide_attribute_name: false, custom_class: "text-danger" %>
   <%= f.text_field :tag_list, value: @book.tag_list.join(','), class: "w-50 border border-dark" %>
+  <div class="evaluate_stars">
+    <label>評価</label>
+  </div>
   <%= f.submit %>
 <% end %>
+
+<script>
+  $('.evaluate_stars').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'book[evaluation]' //登録するモデル名とカラム名を記述
+  });
+</script>
