@@ -2,8 +2,15 @@
 <!--検索機能-->
 <div class = "my-3">
   <%= search_form_for @q do |f| %>
-    <%= f.label :title, "Keyword" %><br>
-    <%= f.search_field :title_cont %>
+    <div class ="form">
+      <%= f.label :title, "Keyword" %><br>
+      <%= f.search_field :title_cont %>
+    </div>
+    <div class ="form">
+      <%= f.label :evaluation %><br>
+      <%= f.number_field :evaluation_gteq, value: 0 %>以上〜
+      <%= f.number_field :evaluation_lteq, value: 5 %>以下
+    </div>
     <%= f.submit %>
   <% end %>
 </div>
